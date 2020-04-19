@@ -9,6 +9,13 @@ import { addArticle } from "./actions/index";
 window.store = store;
 window.addArticle = addArticle;
 
+/**
+ * Tests at console
+ */
+store.subscribe(() => console.log('Look ma, Redux!!') );
+store.dispatch( addArticle({ title: 'React Redux Tutorial for Beginners', id: 1 }) );
+console.log(store.getState());
+
 class App extends Component {
   constructor() {
     super();
