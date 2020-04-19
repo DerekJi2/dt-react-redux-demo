@@ -5,6 +5,7 @@ import './style.css';
 import Example from './Example'
 import store from "./store/index";
 import { addArticle } from "./actions/index";
+import { Provider } from "react-redux";
 
 window.store = store;
 window.addArticle = addArticle;
@@ -34,4 +35,9 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById('root'));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
