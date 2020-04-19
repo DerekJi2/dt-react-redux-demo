@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Hello from './Hello';
 import './style.css';
+import Example from './Example'
+import store from "./store/index";
+import { addArticle } from "./actions/index";
+
+window.store = store;
+window.addArticle = addArticle;
 
 class App extends Component {
   constructor() {
@@ -15,9 +21,7 @@ class App extends Component {
     return (
       <div>
         <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+        <Example></Example>
       </div>
     );
   }
