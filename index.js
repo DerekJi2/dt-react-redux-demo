@@ -6,6 +6,8 @@ import Example from './Example'
 import store from "./store/index";
 import { addArticle } from "./actions/index";
 import { Provider } from "react-redux";
+import List from "./components/List";
+import Form from "./components/Form";
 
 window.store = store;
 window.addArticle = addArticle;
@@ -29,7 +31,17 @@ class App extends Component {
     return (
       <div>
         <Hello name={this.state.name} />
-        <Example></Example>
+        <Example></Example> 
+        <>
+          <div>
+            <h2>Articles</h2>
+            <List />
+          </div>
+          <div>
+            <h2>Add a new article</h2>
+            <Form />
+          </div>
+        </>
       </div>
     );
   }

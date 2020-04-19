@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+const mapStateToProps = state => {
+  return { articles: state.articles };
+};
 
 export default class Example extends Component {
-  constructor(props = {}) {
+  constructor(props) {
     super(props);
 
     this.state = {
